@@ -543,6 +543,15 @@ export class FormGroup<
    * console.log(form.get('first').status);  // 'DISABLED'
    * ```
    */
+const form = new FormGroup({
+  first: new FormControl('first name'),
+  last: new FormControl('last name')
+});
+
+form.reset({
+  first: {value: 'name', disabled: true},
+  last: 'last'
+});
   override reset(
     value: ɵTypedOrUntyped<
       TControl,
